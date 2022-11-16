@@ -1,0 +1,82 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+   
+   <<<11>>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<3>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Autocomplete Term)
+       Approach: ...
+       For Autocomplete Term I had to initialize the instance variable to the appropriate value.
+       Then I returned a negative zero or a positive integer based on whether other.query is smaller then
+       or larger than or equal to than other.query. After I returned an object of type, a - 1, 0, or +1 based on
+       whether v.weight is smaller, larger, or equal to other.query.
+       Then I initialized instance variable appropriately, then a substring of w of length Math.min(r.w.query.length().
+       Finally I return a string containing the weight and query separated by a tab.
+
+       Issues and resolution: did not realize that reverse weight order required that the order would be opposite
+       from what I normally anticipated. for the output I was getting similar values to what i was suppose
+       to get for lexicographic order which made me realize the issue had to be in my reverse weight
+       order comparator class. I went back to the comparator and switched the order of the arguments of the
+       compare method and this resolved my issue.
+
+   Problem 2 (Binary Search Deluxe)
+       Approach: ...
+       For Binary Search Deluxe I had to modify the standard binary search so that when
+       a [mid] matches key. After returning mid say index(initialized to -1) and adjusted hi, the returned index,
+       I wrote an if statement. Then if (a == null || key == null) throw new NullPointException. in the following line
+       I placed int low = 0; and int hi = a.length -1;. Then in the mid I made it equal to lo + hi - lo
+       and I divided it by 2. After I placed another if statement " if (c.compare(key, a[mid]) < 0)" that hi = mid -1;
+       else (c.compare(key, a[mid]) > 0). With another else if if (c.compare(key, a[mid]) > 0) which makes lo = mid + 1.
+       Finally I returned the mid.
+
+       Issues and resolution: ...
+       The Issue I encountered was in gradescope I was getting this error: Calling the <BinarySearchDeluxe> constructor
+        without arguments Calling <firstIndexOf> with arguments:
+       ([], Term(10    abc), Term$ReverseWeightOrder@6956de9)
+       Then checking the returned value
+       java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+       I was having the same error on problem 3 Autocomplete where it says Calling the <Autocomplete> constructor
+       with arguments: ([])
+       Calling <allMatches> with arguments: ("Term1")
+       Then checking the returned value
+       java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+       I was compiling my code and running it and everything works fine. I cant seem to figure out whats wrong or whats
+       missing with the code only that it has something to do with java.lang.ArrayIndexOutOfBoundsException: and
+       my index being out of bounds.
+
+
+   Problem 3 (Autocomplete)
+       Approach: ...
+       For Autocomplete we are creating a program that when you are typing a query and it presents
+       to you a list of the top-matching queries in descending order of weight. I had to initialize this.term as a
+       defensive copy sorted terms in lexicographic order. Then used BinarySearchDeluxe and terms that match prefix
+       which were given to us. After I had to find n, the number of terms and prefix if null. Then I had to
+       sort matches in reverse order of weight and return the sorted array carefully so they could be ordered correctly.
+       Then I used BinarySearchDeluxe and term.byPrefixOrder(), to obtain the first index and last of occurrence of
+       prefix. Finally I returned the number of terms that match prefix. To summarize basically we are trying to return
+       the sorted terms in lexicographic order and it being sorted in a descending order.
+
+       Issues and resolution: For Problem 3 other than what I mentioned above I didnt have any other issues or
+       difficulty doing this problem. It was straight foreword on what needed to be done.
+   
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS210 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+   Suncharn             SI           Helped go over the exercises during SI session
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+  This was an interesting and somewhat easier then other project, understanding how a search works on google along with
+  how they use binary numbers to do it.
